@@ -14,7 +14,7 @@ const Message: React.FC<MessageProps> = ({ message, onClose }) => {
     return () => {
       clearTimeout(timeout);
     };
-  }, []);
+  }, [onClose]);
 
   return show ? (
     <div className="fixed top-4 right-4 p-4 bg-yellow-500 text-black rounded">
