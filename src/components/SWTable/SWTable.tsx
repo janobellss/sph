@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 // Hooks
@@ -9,27 +10,36 @@ import {
   removeFromFavorites,
 } from "../../features/favorites/favoritesSlice";
 
+// Components
+import Card from "../Card/Card";
+import Message from "../Message/Message";
+
 // Types
 import { FavoritePerson } from "../../types/people";
-import Card from "../Card/Card";
 
 type SWTableProps = {
   data: FavoritePerson[];
 };
 
 const SWTable = ({ data }: SWTableProps) => {
+  const [notification, setNotification] = useState<string | null>(null);
   const dispatch = useAppDispatch();
 
   const addToFavoritesHandler = (person: FavoritePerson) => {
     dispatch(addToFavorites(person));
+    setNotification(`${person.name} is added to your favorite list!`);
   };
 
   const removeFromFavoritesHandler = (name: string) => {
     dispatch(removeFromFavorites(name));
+    setNotification(`${name} is removed from your favorite list!`);
   };
 
   return (
     <>
+      {notification && (
+        <Message message={notification} onClose={() => setNotification(null)} />
+      )}
       {data.length < 1 ? (
         <p>No Records Found!</p>
       ) : (

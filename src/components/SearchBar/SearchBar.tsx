@@ -1,4 +1,6 @@
 import { useState } from "react";
+
+// Components
 import Card from "../Card/Card";
 
 type SearchBarProps = {
