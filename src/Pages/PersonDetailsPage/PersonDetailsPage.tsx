@@ -17,7 +17,7 @@ const PersonDetailsPage = () => {
 
   return (
     <div className="flex flex-col items-center justify-center py-14 px-32 gap-8">
-      <button className="self-start" onClick={onGoBackHandler}>
+      <button className="text-xl self-start" onClick={onGoBackHandler}>
         Go Back
       </button>
       {isLoading ? (

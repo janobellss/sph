@@ -9,7 +9,7 @@ const Favorites = () => {
 
   return (
     <div>
-      <p className="mb-4">Favorites</p>
+      <p className="text-xl mb-4">Favorites</p>
       <SWTable data={favoritePeople} />
     </div>
   );

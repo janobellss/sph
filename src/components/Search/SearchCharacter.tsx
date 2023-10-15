@@ -1,5 +1,5 @@
 // Components
-import SearchResults from "../../components/SearchResults/SearchResults";
+import SWTable from "../SWTable/SWTable";
 
 // Services
 import { useSearchCharacterQuery } from "../../services/starWars";
@@ -18,7 +18,7 @@ const SearchCharacter = ({ query }: SearchCharacterProps) => {
       ) : error ? (
         <p>Loading failed. Please try again.</p>
       ) : (
-        <SearchResults results={data?.results || []} />
+        <SWTable data={data?.results || []} />
       )}
     </>
   );

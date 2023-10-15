@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Card from "../Card/Card";
 
 type SearchBarProps = {
   onSearch: (query: string) => void;
@@ -19,11 +20,11 @@ const SearchBar = ({ onSearch }: SearchBarProps) => {
   };
 
   return (
-    <div className="flex items-center max-w-md mx-auto p-2 bg-white rounded-lg shadow-lg">
+    <Card className="flex items-center max-w-md mx-auto">
       <input
         type="text"
         placeholder="Search..."
-        className="w-full py-2 pr-10 pl-4 text-gray-700 rounded-l-lg focus:outline-none focus:ring focus:ring-yellow-300"
+        className="w-full py-2 pr-10 pl-4 bg-black/75 text-white rounded focus:outline-none focus:ring-1 focus:ring-yellow-400"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
         onKeyDown={onKeyDownHandler}
@@ -34,7 +35,7 @@ const SearchBar = ({ onSearch }: SearchBarProps) => {
       >
         Search
       </button>
-    </div>
+    </Card>
   );
 };
 

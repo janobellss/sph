@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 body {
+  background-image: url("./assets/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-color: #303030;
-  color: #ffd41e;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
 }
