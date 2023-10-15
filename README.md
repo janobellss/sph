@@ -52,3 +52,15 @@ In the project directory, you can run the following scripts:
    ```bash
    npm run dev
    ```
+
+2. Run lint:
+
+   ```bash
+   npm run lint
+   ```
+
+3. Run test:
+
+   ```bash
+   npm run test
+   ```
