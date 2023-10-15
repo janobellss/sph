@@ -10,6 +10,7 @@ A demo app for searching a Star Wars character.
 - Redux
 - Redux Toolkit
 - RTK Query
+- React Router
 - clsx
 - Tailwind CSS
 
