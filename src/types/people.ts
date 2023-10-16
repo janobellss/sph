@@ -22,8 +22,5 @@ export type Person = {
   created: string;
   edited: string;
   url: string;
-};
-
-export type FavoritePerson = Person & {
   isFavorite?: boolean;
 };

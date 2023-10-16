@@ -15,17 +15,17 @@ import Card from "../Card/Card";
 import Message from "../Message/Message";
 
 // Types
-import { FavoritePerson } from "../../types/people";
+import { Person } from "../../types/people";
 
 type SWTableProps = {
-  data: FavoritePerson[];
+  data: Person[];
 };
 
 const SWTable = ({ data }: SWTableProps) => {
   const [notification, setNotification] = useState<string | null>(null);
   const dispatch = useAppDispatch();
 
-  const addToFavoritesHandler = (person: FavoritePerson) => {
+  const addToFavoritesHandler = (person: Person) => {
     dispatch(addToFavorites(person));
     setNotification(`${person.name} is added to your favorite list!`);
   };

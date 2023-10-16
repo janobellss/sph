@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { FavoritePerson, Person } from "../../types/people";
+import { Person } from "../../types/people";
 
 type FavoritesState = {
-  people: FavoritePerson[];
+  people: Person[];
 };
 
 const favoritesStoredValue = localStorage.getItem("favorites");

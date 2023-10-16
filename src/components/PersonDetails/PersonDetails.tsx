@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 // Hooks
-import { useAppDispatch } from "../../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
 
 // Actions
 import {
@@ -14,21 +14,23 @@ import Card from "../Card/Card";
 import Message from "../Message/Message";
 
 // Types
-import { FavoritePerson, Person } from "../../types/people";
+import { Person } from "../../types/people";
 
 import profileImage from "../../assets/placeholder.png";
 
 type PersonDetailProps = {
-  person: FavoritePerson;
+  person: Person;
 };
 
 const PersonDetail = ({ person }: PersonDetailProps) => {
+  const favoriteCharacters = useAppSelector((state) => state.favorites.people);
   const [notification, setNotification] = useState<string | null>(null);
   const dispatch = useAppDispatch();
 
-  // Upon adding to favorites / removing from favorites store
-  // the data should be updated in the API then send back to the store
-  // so we always have the latest / updated data
+  const isFavorite = favoriteCharacters.some(
+    (favoriteCharacter) => favoriteCharacter.name === person.name
+  );
+
   const addToFavoritesHandler = (person: Person) => {
     dispatch(addToFavorites(person));
     setNotification(`${person.name} is added to your favorite list!`);
@@ -134,7 +136,7 @@ const PersonDetail = ({ person }: PersonDetailProps) => {
             </div>
           </div>
 
-          {person.isFavorite ? (
+          {isFavorite ? (
             <button
               onClick={() => removeFromFavoritesHandler(person.name)}
               className="bg-yellow-400 hover:bg-yellow-500 text-black px-4 py-2 rounded transform transition-transform hover:scale-105"
