@@ -64,3 +64,9 @@ In the project directory, you can run the following scripts:
    ```bash
    npm run test
    ```
+
+4. Run test coverage:
+
+   ```bash
+   npm run coverage
+   ```
